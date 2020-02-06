@@ -14,7 +14,7 @@ function ajaxPost(body,callback){
       setTimeout(callback,3000,response);
     }
   }
-  request.open("POST", "http://127.0.0.1:5000/");
+  request.open("POST", "https://thegrandpybot.herokuapp.com");
   request.setRequestHeader("Content-Type", "application/json");
   request.send(JSON.stringify(body));
 };
