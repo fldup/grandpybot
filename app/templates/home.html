@@ -18,7 +18,7 @@
 
     <header>
       <div class="logo">
-        <img src= "{{url_for('static', filename='img/logo.jpg')}}" alt="GrandPy logo" id="logo_img">
+        <img src= "{{url_for('static', filename='img/logo.png')}}" alt="GrandPy logo" id="logo_img">
       </div>
       <div class="app">
         <h1>Grandpy</h1>
@@ -27,38 +27,36 @@
     </header>
 
     <div class="container">
-
-      <div id="response" class="col-md-12"></div>
-
+      <div class="row">
+        <div id="response" class="col-md-12"></div>
+      </div>
       <div class="row fixed-bottom">
 
-        <div class="col-md-12">
+        <div class="col-12">
           <form class="row well" action="" method="post">
-            <legend class="col-md-4">Hi ! <br>I'm Grandpy bot, ask me something!</legend>
-            <fieldset class="col-md-8">
-              <div class="row">
-                <input id="textarea" class="form-control col-md-10" rows="2" placeholder="Write your question here :)"></input>
-                <div class="col-md-2">
-                  <button id="button" class="btn btn-primary float-right" type="submit">Send</button>
-                </div>
+              <div class="col-9 offset-md-1 col-md-9">
+                <input id="textarea" class="form-control" rows="2" placeholder="Hi ! I'm Grandpy bot ! :)"></input>
               </div>
-            </fieldset>
+              <div class="col-3 col-md-2">
+                <button id="button" class="btn btn-primary" type="submit">Send</button>
+              </div>
           </form>
         </div>
 
         <div class="col-md-12">
           <footer class="row" id="about_me">
-            <div class="offset-md-1 col-md-3">
-              <p><img src="{{url_for('static', filename='img/linkedIn.png')}}" alt="linkedIn"><a href="https://fr.linkedin.com/in/gr%25C3%25A9goire-duponchel-05686155">Grégoire Duponchel</a></p>
+            <div class="offset-md-10 col-1">
+              <p><a href="https://fr.linkedin.com/in/gr%25C3%25A9goire-duponchel-05686155"><img src="{{url_for('static', filename='img/linkedIn.png')}}" alt="linkedIn"></a></p>
             </div>
-            <div class="offset-md-3 col-md-5">
-              <p><img src="{{url_for('static', filename='img/GitHub.png')}}" alt="Git"> Check this project on <a href="#"> GtiHub</a>!</p>
+            <div class="col-1">
+              <p><a href="#"><img src="{{url_for('static', filename='img/GitHub.png')}}" alt="Git"></a></p>
             </div>
           </footer>
         </div>
 
       </div>
     </div>
+
   <script src="{{url_for('static', filename='bootstrap/dist/js/bootstrap.min.js')}}"></script>
   <script type="text/javascript" src="{{url_for('static', filename='script/script.js')}}"></script>
   <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBAjiUDijQmWRHnfAKHWZcRsZBeQSz12cY"async defer></script>

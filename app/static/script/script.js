@@ -47,6 +47,7 @@ function lastMessage(){
 
 function insertResponse(response){
   elt.classList.replace('loader','custom')
+  elt.classList.add('borderpy');
   if (typeof response.data == 'string') {
     elt.innerHTML = '<p>'+response.data+'</p>';
   }else{
@@ -61,7 +62,7 @@ function insertResponse(response){
 
 function userPost(){
   elt = addElt();
-  elt.classList.add('custom');
+  elt.classList.add('custom', 'borderuser');
   elt.innerHTML = '<p>' + input.value + '</p>';
 }
 
