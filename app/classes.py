@@ -1,6 +1,7 @@
 import requests
 from app.constant import *
 import random
+from app.config import *
 
 class ResponsePy:
     def __init__(self):
@@ -64,7 +65,7 @@ class Map():
 
     def localisation(self):
         r = requests.get(self.url + self.place +
-        '&key=' + 'AIzaSyBAjiUDijQmWRHnfAKHWZcRsZBeQSz12cY')
+        '&key=' + key_value)
         data = r.json()
         return data['results'][0]['geometry']['location']
 
