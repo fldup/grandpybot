@@ -7,6 +7,7 @@ let elt;
 
 
 function ajaxPost(body,callback){
+  /** Ajax request */
   let request = new XMLHttpRequest();
   request.onreadystatechange = function() {
     if (this.readyState == XMLHttpRequest.DONE && this.status == 200) {
@@ -21,6 +22,7 @@ function ajaxPost(body,callback){
 
 
 function initMap(lat,lng) {
+  /** google function to display map */
   let coord = {lat: lat, lng: lng};
   map = new google.maps.Map(document.getElementById('map'+ i), {
     center: coord,
@@ -31,6 +33,7 @@ function initMap(lat,lng) {
 
 
 function addElt(){
+  /** add a new element and insert it into the DOM */
   let newElt = document.createElement('div');
   newElt.classList.add('col-md-12');
   dialogue.appendChild(newElt);
@@ -40,17 +43,23 @@ function addElt(){
 
 
 function lastMessage(){
+  /** scroll to focus view on the latest message  */
   let lastMessage = dialogue.lastChild;
   lastMessage.scrollIntoView()
 };
 
 
 function insertResponse(response){
+  /** function called as a callback function in Ajax
+  function to insert response content */
+
   elt.classList.replace('loader','custom')
   elt.classList.add('borderpy');
   if (typeof response.data == 'string') {
+    /** request return no result */
     elt.innerHTML = '<p>'+response.data+'</p>';
   }else{
+    /** request return results */
     elt.innerHTML = '<div id="map'+i+'"></div><p>'+
     response.data[2]+'</br>'+response.data[1]+'</p>';
 
@@ -61,12 +70,15 @@ function insertResponse(response){
 }
 
 function userPost(){
+  /** insert input value into the new element and add css class */
   elt = addElt();
   elt.classList.add('custom', 'borderuser');
   elt.innerHTML = '<p>' + input.value + '</p>';
 }
 
 function grandPyPost(){
+  /** insert content of response request into a new element and
+  add css class */
   elt = addElt();
   elt.classList.add('loader');
   body = {'message': input.value}
@@ -75,6 +87,7 @@ function grandPyPost(){
 
 
 function discussion(e){
+  /** process called when an event occured */
   e.preventDefault();
   if (input.value.length > 0) {
     userPost();

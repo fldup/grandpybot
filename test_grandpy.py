@@ -16,11 +16,11 @@ class TestParser:
     def test_ponctuation(self):
         assert ',' not in self.SENTENCE.ponctuation()
 
-    def test_listIt(self):
-        assert type(self.SENTENCE.listIt()) == list
+    def test_list_it(self):
+        assert type(self.SENTENCE.list_it()) == list
 
-    def test_deleteCommonWords(self):
-        assert type(self.SENTENCE.deleteCommonWords()) == str
+    def test_delete_common_words(self):
+        assert type(self.SENTENCE.delete_common_words()) == str
 
 
 
