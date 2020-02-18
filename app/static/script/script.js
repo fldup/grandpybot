@@ -6,7 +6,7 @@ let map;
 let elt;
 
 
-function ajaxPost(body,callback){
+const ajaxPost = (body,callback) => {
   /** Ajax request */
   let request = new XMLHttpRequest();
   request.onreadystatechange = function() {
@@ -21,7 +21,7 @@ function ajaxPost(body,callback){
 };
 
 
-function initMap(lat,lng) {
+const initMap = (lat,lng) => {
   /** google function to display map */
   let coord = {lat: lat, lng: lng};
   map = new google.maps.Map(document.getElementById('map'+ i), {
@@ -32,7 +32,7 @@ function initMap(lat,lng) {
 };
 
 
-function addElt(){
+const addElt = () => {
   /** add a new element and insert it into the DOM */
   let newElt = document.createElement('div');
   newElt.classList.add('col-md-12');
@@ -42,14 +42,14 @@ function addElt(){
 };
 
 
-function lastMessage(){
+const lastMessage = () => {
   /** scroll to focus view on the latest message  */
   let lastMessage = dialogue.lastChild;
   lastMessage.scrollIntoView()
 };
 
 
-function insertResponse(response){
+const insertResponse = (response) => {
   /** function called as a callback function in Ajax
   function to insert response content */
 
@@ -69,14 +69,14 @@ function insertResponse(response){
   lastMessage();
 }
 
-function userPost(){
+const userPost = () => {
   /** insert input value into the new element and add css class */
   elt = addElt();
   elt.classList.add('custom', 'borderuser');
   elt.innerHTML = '<p>' + input.value + '</p>';
 }
 
-function grandPyPost(){
+const grandPyPost = () => {
   /** insert content of response request into a new element and
   add css class */
   elt = addElt();
@@ -86,7 +86,7 @@ function grandPyPost(){
 }
 
 
-function discussion(e){
+const discussion = (e) => {
   /** process called when an event occured */
   e.preventDefault();
   if (input.value.length > 0) {
@@ -97,12 +97,12 @@ function discussion(e){
 };
 
 
-input.addEventListener('keydown', function(e){
+input.addEventListener('keydown', e => {
   if (e.key === 'Enter') {
       discussion(e);
   }
 });
 
-sendMessage.addEventListener('click',function(e){
+sendMessage.addEventListener('click', e => {
   discussion(e);
 });
