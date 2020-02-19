@@ -6,7 +6,7 @@ Ask for an address to grandPy bot and he will show it to you on googleMap,
 with a little description from wikipedia about a nearby place :) /n/n
 
 To use this app : /n
-Simply go on 'https://wwww.thegrandpybot.herokuapp.com'
+Simply go on 'https://thegrandpybot.herokuapp.com/'
 /n/n
 
 To work on it : /n
