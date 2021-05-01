@@ -17,3 +17,12 @@ dependencies useful for the app /n
 to 'key_value' variable in 'config.py'/n/n
 
 Hope you'll enjoy it ! :) !! !!!!!!!!!
+
+
+memo git :
+git clone
+git add 
+git commit -m "mon commentaire"
+git branch "mabranche"
+git checkout "mabranche"
+git merge
