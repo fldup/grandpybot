@@ -16,4 +16,4 @@ dependencies useful for the app /n
 -> Make sure to have a google key for map request and past it
 to 'key_value' variable in 'config.py'/n/n
 
-Hope you'll enjoy it ! :) !! 
+Hope you'll enjoy it ! :) !! !!!!!!!!!
